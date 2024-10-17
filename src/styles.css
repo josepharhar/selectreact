@@ -5,3 +5,9 @@ select, ::picker(select) {
 img {
   height: 1em;
 }
+
+.circle {
+  width: 1em;
+  height: 1em;
+  padding-right: 0.5em;
+}
