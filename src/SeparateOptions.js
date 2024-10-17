@@ -13,21 +13,25 @@ const options = [
   }
 ];
 
-export default function Select() {
+function Option(props) {
+  return (
+    <div>
+      <option>
+        <img src={props.img}></img>
+        {props.name}
+      </option>
+    </div>
+  );
+}
+
+export default function SeparateOptions() {
   return (
     <select>
       <button>
         <selectedoption></selectedoption>
       </button>
       {options.map(option => {
-        return (
-          <div key={option.name}>
-            <option>
-              <img src={option.img}></img>
-              {option.name}
-            </option>
-          </div>
-        );
+        return <Option name={option.name} img={option.img}></Option>
       })}
     </select>
   );
