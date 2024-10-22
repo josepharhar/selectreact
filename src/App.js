@@ -17,15 +17,15 @@ const options = [
   ],
   [
     {
-      name: 'one',
+      name: 'four',
       color: 'red'
     },
     {
-      name: 'two',
+      name: 'five',
       color: 'green'
     },
     {
-      name: 'three',
+      name: 'six',
       color: 'blue'
     }
   ]
@@ -40,10 +40,10 @@ export default function Select() {
   }
 
   useEffect(() => {
-    if (!ref.current) return;
+    /*if (!ref.current) return;
     const select = ref.current.querySelector('select');
     const selectedoption = ref.current.querySelector('selectedoption');
-    selectedoption.innerHTML = select.selectedOptions[0].innerHTML;
+    selectedoption.innerHTML = select.selectedOptions[0].innerHTML;*/
   });
 
   return (
@@ -54,7 +54,7 @@ export default function Select() {
         </button>
         {options[optionsIndex].map(option => {
           return (
-            <div>
+            <div key={option.name}>
               <option selected={option.selected}>
                 <span className={'circle'} style={{color: option.color}}>⬤</span>
                 {option.name}
